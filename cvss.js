@@ -76,19 +76,19 @@ var CVSS = function (id, options) {
         AV: {
             N: {
                 l: 'Network',
-                d: "<b>Worst:</b> The vulnerable component is bound to the network stack and the set of possible attackers extends beyond the other options listed below, up to and including the entire Internet. Such a vulnerability is often termed “remotely exploitable” and can be thought of as an attack being exploitable at the protocol level one or more network hops away (e.g., across one or more routers)."
+                d: "<b>최악:</b> 취약한 구성 요소는 네트워크 스택에 바인딩되며, 가능한 공격자 집합은 아래 나열된 다른 옵션 이상으로 확장되며, 전체 인터넷까지 포함한다.그러한 취약성은 종종 \"원격적으로 이용 가능한\" 것으로 불리며, 프로토콜 수준에서 하나 이상의 네트워크 홉(예: 하나 이상의 라우터에 걸쳐)에서 공격이 이용 가능한 것으로 생각할 수 있다."
             },
             A: {
                 l: 'Adjacent',
-                d: "<b>Worse:</b> The vulnerable component is bound to the network stack, but the attack is limited at the protocol level to a logically adjacent topology. This can mean an attack must be launched from the same shared physical (e.g., Bluetooth or IEEE 802.11) or logical (e.g., local IP subnet) network, or from within a secure or otherwise limited administrative domain (e.g., MPLS, secure VPN to an administrative network zone). One example of an Adjacent attack would be an ARP (IPv4) or neighbor discovery (IPv6) flood leading to a denial of service on the local LAN segment."
+                d: "<b>최악:</b> 취약한 구성 요소는 네트워크 스택에 바인딩되지만 공격은 프로토콜 수준에서 논리적으로 인접한 토폴로지로 제한됩니다. 이는 공격이 동일한 공유 물리적(예: Bluetooth 또는 IEEE 802.11) 또는 논리적(예: 로컬 IP 서브넷) 네트워크 또는 보안 또는 기타 제한된 행정 도메인(예: MPLS, 관리 네트워크 구역으로 VPN을 보안) 내에서 시작되어야 한다는 것을 의미할 수 있다.인접 공격의 한 예는 ARP(IPv4) 또는 이웃 발견(IPv6) 홍수로 인해 로컬 LAN 세그먼트에서 서비스 거부로 이어질 수 있다."
             },
             L: {
                 l: 'Local',
-                d: "<b>Bad:</b> The vulnerable component is not bound to the network stack and the attacker’s path is via read/write/execute capabilities. Either: <ul><li>the attacker exploits the vulnerability by accessing the target system locally (e.g., keyboard, console), or remotely (e.g., SSH);</li><li>or the attacker relies on User Interaction by another person to perform actions required to exploit the vulnerability (e.g., using social engineering techniques to trick a legitimate user into opening a malicious document).</li></ul>"
+                d: "<b>나쁨:</b> 취약한 구성 요소는 네트워크 스택에 바인딩되지 않으며 공격자의 경로는 읽기 / 쓰기 / 실행 기능을 통해 수행됩니다.공격자는 대상 시스템에 로컬(예: 키보드, 콘솔) 또는 원격(예: SSH)으로 액세스함으로써 취약성을 악용한다. 또는 공격자는 취약성을 악용하기 위해 필요한 동작을 수행하기 위해 다른 사람에 의한 사용자 상호작용에 의존한다(예: 소셜 엔지니어링 기술을 사용하여 합법적인 사용자를 속여 악의적인 문서를 열도록 한다).</li></ul>"
             },
             P: {
                 l: 'Physical',
-                d: "<b>Bad:</b> The attack requires the attacker to physically touch or manipulate the vulnerable component. Physical interaction may be brief (e.g., evil maid attack) or persistent. An example of such an attack is a cold boot attack in which an attacker gains access to disk encryption keys after physically accessing the target system. Other examples include peripheral attacks via FireWire/USB Direct Memory Access (DMA)."
+                d: "<b>나쁨:</b> 공격은 공격자가 취약한 구성요소를 물리적으로 만지거나 조작하도록 요구합니다. 신체적 상호작용은 짧거나(예: 사악한 하녀 공격) 지속적일 수 있다. 이러한 공격의 예는 공격자가 대상 시스템에 물리적으로 액세스한 후 디스크 암호화 키에 액세스할 수 있는 콜드 부트 공격입니다.다른 예로는 FireWire/USB Direct Memory Access(DMA)를 통한 주변 공격이 있다."
             }
         },
         AC: {
