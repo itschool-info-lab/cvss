@@ -84,7 +84,7 @@ var CVSS = function (id, options) {
             },
             L: {
                 l: 'Local',
-                d: "<b>나쁨:</b> 취약한 구성 요소는 네트워크 스택에 바인딩되지 않으며 공격자의 경로는 읽기 / 쓰기 / 실행 기능을 통해 수행됩니다.공격자는 대상 시스템에 로컬(예: 키보드, 콘솔) 또는 원격(예: SSH)으로 액세스함으로써 취약성을 악용한다. 또는 공격자는 취약성을 악용하기 위해 필요한 동작을 수행하기 위해 다른 사람에 의한 사용자 상호작용에 의존한다(예: 소셜 엔지니어링 기술을 사용하여 합법적인 사용자를 속여 악의적인 문서를 열도록 한다).</li></ul>"
+                d: "<b>나쁨:</b> 취약한 구성 요소는 네트워크 스택에 바인딩되지 않으며 공격자의 경로는 읽기 / 쓰기 / 실행 기능을 통해 수행됩니다.둘 중 하나 :<ul><li>공격자는 대상 시스템(예: 키보드, 콘솔) 또는 원격으로(예: SSH)에 액세스하여 취약성을 악용한다.</li><li>또는 공격자는 다른 사람이 취약성을 이용하기 위해 필요한 작업을 수행하기 위해 사용자 상호작용에 의존한다(예: 소셜 엔지니어링 기술을 사용하여 합법적인 사용자가 악의적인 문서를 열도록 속인다).</li></ul>"
             },
             P: {
                 l: 'Physical',
@@ -94,88 +94,88 @@ var CVSS = function (id, options) {
         AC: {
             L: {
                 l: 'Low',
-                d: "<b>Worst:</b> Specialized access conditions or extenuating circumstances do not exist. An attacker can expect repeatable success when attacking the vulnerable component."
+                d: "<b>최악:</b> 특수 액세스 조건 또는 불가피한 상황이 존재하지 않습니다.공격자는 취약한 구성요소를 공격할 때 반복 가능한 성공을 기대할 수 있습니다."
             },
             H: {
                 l: 'High',
-                d: "<b>Bad:</b> A successful attack depends on conditions beyond the attacker's control. That is, a successful attack cannot be accomplished at will, but requires the attacker to invest in some measurable amount of effort in preparation or execution against the vulnerable component before a successful attack can be expected."
+                d: "<b>나쁨:</b> 공격이 성공하려면 공격자가 통제할 수 없는 조건이 필요합니다.즉, 성공적인 공격은 마음대로 수행할 수 없지만 공격자는 성공적인 공격을 예상하기 전에 취약한 구성 요소에 대한 준비 또는 실행에 측정 가능한 노력에 투자해야 합니다."
             }
         },
         PR: {
             N: {
                 l: 'None',
-                d: "<b>Worst:</b> The attacker is unauthorized prior to attack, and therefore does not require any access to settings or files of the the vulnerable system to carry out an attack."
+                d: "<b>최악:</b> 공격자는 공격 전에 허가되지 않으므로 공격을 수행하기 위해 취약한 시스템의 설정이나 파일에 대한 액세스가 필요하지 않습니다."
             },
             L: {
                 l: 'Low',
-                d: "<b>Worse</b> The attacker requires privileges that provide basic user capabilities that could normally affect only settings and files owned by a user. Alternatively, an attacker with Low privileges has the ability to access only non-sensitive resources."
+                d: "<b>최악:</b> 공격자는 일반적으로 사용자가 소유한 설정 및 파일에만 영향을 미칠 수 있는 기본 사용자 기능을 제공하는 권한을 요구합니다.또는 권한이 낮은 공격자는 비민감적인 리소스에만 액세스할 수 있습니다."
             },
             H: {
                 l: 'High',
-                d: "<b>Bad:</b> The attacker requires privileges that provide significant (e.g., administrative) control over the vulnerable component allowing access to component-wide settings and files."
+                d: "<b>나쁨:</b> 공격자는 취약한 구성요소에 대한 상당한(예를 들어, 관리) 제어를 제공하는 권한이 필요하므로 구성요소 전체 설정 및 파일에 액세스할 수 있습니다."
             }
         },
         UI: {
             N: {
                 l: 'None',
-                d: "<b>Worst:</b> The vulnerable system can be exploited without interaction from any user."
+                d: "<b>최악:</b> 취약한 시스템은 사용자로부터의 상호 작용 없이 이용될 수 있다."
             },
             R: {
                 l: 'Required',
-                d: "<b>Bad:</b> Successful exploitation of this vulnerability requires a user to take some action before the vulnerability can be exploited. For example, a successful exploit may only be possible during the installation of an application by a system administrator."
+                d: "<b>나쁨:</b> 이 취약성에 대한 공격이 성공하려면 취약성을 이용하기 전에 사용자가 일부 작업을 수행해야 합니다.예를 들어, 시스템 관리자가 응용프로그램을 설치하는 동안만 공격이 성공할 수 있습니다."
             }
         },
 
         S: {
             C: {
                 l: 'Changed',
-                d: "<b>Worst:</b> An exploited vulnerability can affect resources beyond the security scope managed by the security authority of the vulnerable component. In this case, the vulnerable component and the impacted component are different and managed by different security authorities."
+                d: "<b>최악:</b> 공격된 취약성은 취약한 구성요소의 보안 권한이 관리하는 보안 범위를 넘어 리소스에 영향을 미칠 수 있습니다.이 경우 취약한 구성 요소와 영향을 받는 구성 요소는 서로 다르며 다른 보안 당국에 의해 관리됩니다."
             },
             U: {
                 l: 'Unchanged',
-                d: "<b>Bad:</b> An exploited vulnerability can only affect resources managed by the same security authority. In this case, the vulnerable component and the impacted component are either the same, or both are managed by the same security authority."
+                d: "<b>나쁨:</b> 공격된 취약성은 동일한 보안 당국이 관리하는 리소스에만 영향을 미칠 수 있습니다.이 경우 취약한 구성 요소와 영향을 받는 구성 요소는 동일하거나 둘 다 동일한 보안 당국에 의해 관리됩니다."
             }
         },
         C: {
             H: {
                 l: 'High',
-                d: "<b>Worst:</b> There is a total loss of confidentiality, resulting in all resources within the impacted component being divulged to the attacker. Alternatively, access to only some restricted information is obtained, but the disclosed information presents a direct, serious impact. For example, an attacker steals the administrator's password, or private encryption keys of a web server."
+                d: "<b>최악:</b> 기밀성이 완전히 상실되어 영향을 받은 구성요소 내의 모든 리소스가 공격자에게 누설된다. 또는 일부 제한 정보만 액세스할 수 있지만 공개된 정보는 직접적이고 심각한 영향을 미칩니다.예를 들어, 공격자는 관리자의 암호 또는 웹 서버의 개인 암호화 키를 훔칩니다."
             },
             L: {
                 l: 'Low',
-                d: "<b>Bad:</b> There is some loss of confidentiality. Access to some restricted information is obtained, but the attacker does not have control over what information is obtained, or the amount or kind of loss is limited. The information disclosure does not cause a direct, serious loss to the impacted component."
+                d: "<b>나쁨:</b> 기밀성 상실이 있다. 일부 제한된 정보에 대한 액세스가 획득되지만 공격자는 어떤 정보를 얻는지 제어하지 못하거나 손실의 양이나 종류가 제한됩니다.정보 공개는 영향을 받는 구성요소에 직접적이고 심각한 손실을 초래하지 않습니다."
             },
             N: {
                 l: 'None',
-                d: "<b>Good:</b> There is no loss of confidentiality within the impacted component."
+                d: "<b>좋음:</b> 영향을 받은 구성요소 내에서 기밀성 손실은 없습니다."
             }
         },
         I: {
             H: {
                 l: 'High',
-                d: "<b>Worst:</b> There is a total loss of integrity, or a complete loss of protection. For example, the attacker is able to modify any/all files protected by the impacted component. Alternatively, only some files can be modified, but malicious modification would present a direct, serious consequence to the impacted component."
+                d: "<b>최악:</b> 완전한 청렴함의 상실이나 완전한 보호 상실이 있다. 예를 들어 공격자는 영향을 받는 구성요소에 의해 보호되는 모든 파일 또는 모든 파일을 수정할 수 있습니다.또는 일부 파일만 수정할 수 있지만 악의적인 수정은 영향을 받는 구성 요소에 직접적이고 심각한 결과를 초래합니다."
             },
             L: {
                 l: 'Low',
-                d: "<b>Bad:</b> Modification of data is possible, but the attacker does not have control over the consequence of a modification, or the amount of modification is limited. The data modification does not have a direct, serious impact on the impacted component."
+                d: "<b>나쁨:</b> 데이터 수정은 가능하지만 공격자는 수정 결과를 제어하지 못하거나 수정 양이 제한되어 있습니다.데이터 수정은 영향을 받는 구성요소에 직접적이고 심각한 영향을 미치지 않습니다."
             },
             N: {
                 l: 'None',
-                d: "<b>Good:</b> There is no loss of integrity within the impacted component."
+                d: "<b>좋음:</b> 충격된 구성요소 내에 무결성의 손실이 없습니다."
             }
         },
         A: {
             H: {
                 l: 'High',
-                d: "<b>Worst:</b> There is a total loss of availability, resulting in the attacker being able to fully deny access to resources in the impacted component; this loss is either sustained (while the attacker continues to deliver the attack) or persistent (the condition persists even after the attack has completed). Alternatively, the attacker has the ability to deny some availability, but the loss of availability presents a direct, serious consequence to the impacted component (e.g., the attacker cannot disrupt existing connections, but can prevent new connections; the attacker can repeatedly exploit a vulnerability that, in each instance of a successful attack, leaks a only small amount of memory, but after repeated exploitation causes a service to become completely unavailable)."
+                d: "<b>최악:</b> 가용성의 총 손실이 있어 공격자는 영향을 받은 구성 요소의 자원에 대한 액세스를 완전히 거부할 수 있다. 이 손실은 지속되거나(공격자가 공격을 계속 전달하는 동안) 지속된다(공격이 완료된 후에도 상태가 지속된다).대안적으로, 공격자는 일부 가용성을 부정할 수 있는 능력을 가지고 있지만, 가용성의 손실은 영향을 받는 구성 요소에 직접적이고 심각한 결과를 초래한다(예: 공격자는 기존 연결을 방해할 수 없지만 새로운 연결을 예방할 수 있다; 공격자는 성공적인 공격의 각 경우, 적은 양의 메모리만 유출할 수 있는 취약성을 반복적으로 이용할 수 있지만, 반복적인 공격 후에는 서비스를 완전히 사용할 수 없게 된다)."
             },
             L: {
                 l: 'Low',
-                d: "<b>Bad:</b> Performance is reduced or there are interruptions in resource availability. Even if repeated exploitation of the vulnerability is possible, the attacker does not have the ability to completely deny service to legitimate users. The resources in the impacted component are either partially available all of the time, or fully available only some of the time, but overall there is no direct, serious consequence to the impacted component."
+                d: "<b>나쁨:</b> 성능이 저하되거나 리소스 가용성이 중단됩니다. 취약성에 대한 반복적인 공격이 가능하더라도 공격자는 합법적인 사용자에 대한 서비스를 완전히 거부할 수 있는 기능을 가지고 있지 않습니다.영향을 받는 구성 요소의 리소스는 항상 부분적으로 사용 가능하거나 일부 시간만 완전히 사용 가능하지만 전반적으로 영향을 받는 구성 요소에 직접적이고 심각한 결과는 없습니다."
             },
             N: {
                 l: 'None',
-                d: "<b>Good:</b> There is no impact to availability within the impacted component."
+                d: "<b>좋음:</b> 영향을 받은 구성요소 내에서 가용성에 영향을 미치지 않습니다."
             }
         }
     };
