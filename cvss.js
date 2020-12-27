@@ -61,14 +61,14 @@ var CVSS = function (id, options) {
 
     // Base Group
     this.bg = {
-        AV: 'Attack Vector',
-        AC: 'Attack Complexity',
-        PR: 'Privileges Required',
-        UI: 'User Interaction',
-        S: 'Scope',
-        C: 'Confidentiality',
-        I: 'Integrity',
-        A: 'Availability'
+        AV: 'Attack Vectior(공격 벡터)',
+        AC: 'Attack Complexity(공격의 복잡성)',
+        PR: 'Privileges Required(필요한 권한)',
+        UI: 'User Interaction(사용자 참여 정도)',
+        S: 'Scope(공격 범위)',
+        C: 'Confidentiality(기밀성)',
+        I: 'Integrity(무결성)',
+        A: 'Availability(가용성)'
     };
 
     // Base Metrics
