@@ -12,57 +12,58 @@
         <meta name="twitter:title" content="CVSS v3.1 Base Score Calculator"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" type="text/css" media="all" href="cvss.css">
-        <style>
-            html, body {
-                background-color: #e0e4e4;
-                font-family: arial;
-                padding: 1em;
-                margin:0;
-                height:100%
-            }
-            #head {
-                width: 100%;
-                height: 25px;
-                color: gray;
-                text-align: center;
-                align-content: center;
-            }
-            #a_side {
-                width: 15%;
-				height: 600px;
-                float: left;
-                }
-            #cvssboard {
-                width: 70%;
-                height: 600px;
-                float: left;
-				text-align: center;
-                align-content: center;
-            }
-            #b_side {
-                width: 15%;
-                height: 600px;
-                float: left;
-            }
-            #footer {
-                width: 100%;
-                height: 10%;
-                text-align: center;
-                align-content: center;
-                font-size: x-small;
-            }
-        </style>
-    </head>
-    <body>
-        <div id="head">
-            <h3>CVSS v3.1 Base Score Calculator</h3>
-        </div>
+		<style>
+		    html, body {
+			background-color: #e0e4e4;
+			font-family: arial;
+			padding: 1em;
+			margin:0;
+			height:100%
+		    }
+		    #head {
+			width: 100%;
+			height: 25px;
+			color: gray;
+			text-align: center;
+			align-content: center;
+		    }
+		    #a_side {
+			width: 15%;
+			height: 600px;
+			float: left;
+			}
+		    #cvssboard {
+			width: 70%;
+			height: 600px;
+			float: left;
+			text-align: center;
+			align-content: center;
+		    }
+		    #b_side {
+			width: 15%;
+			height: 600px;
+			float: left;
+		    }
+		    #footer {
+			color: gray;
+			width: 100%;
+			height: 10%;
+			text-align: center;
+			align-content: center;
+			font-size: x-small;
+		    }
+		</style>
+	</head>
+	<body>
+		<div id="head">
+			<h3>CVSS v3.1 Base Score Calculator</h3>
+		</div>
 		<div id="a_side">
 			<ins class="kakao_ad_area" style="display:none;" data-ad-unit="DAN-MW8i9OR5r8c5yuyk" data-ad-width="160" data-ad-height="600"></ins>
 		</div>
 		<div id="cvssboard"></div>
 		<div id="b_side">
-			<ins class="kakao_ad_area" style="display:none;" data-ad-unit= "DAN-Xpee5Gs084xW6svT" data-ad-width= 160" data-ad-height="600"></ins>
+			<ins class="kakao_ad_area" style="display:none;" data-ad-unit="DAN-Xpee5Gs084xW6svT" data-ad-width="160" data-ad-height="600"></ins>
 		</div>
 		<div id="footer">
 			Copyright 2019 © Chandan
@@ -71,18 +72,18 @@
 			<br/>Korean Description Translation Version by <a href="https://info-lab.tistory.com/278">info-lab</a>.
 			<br/><br/><ins class="kakao_ad_area" style="display:none;" data-ad-unit="DAN-Kr80APVpoKTfJWh5" data-ad-width="320" data-ad-height= "100"></ins>
 		</div>
-    </body>
-    <script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async></script>
+	</body>
+    	<script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async></script>
 	<script src="cvss.js"></script>
-    <script>
-        var c = new CVSS("cvssboard", {
-            onchange: function() {
-                window.location.hash = c.get().vector;
-                c.vector.setAttribute('href', '#' + c.get().vector)
-            }
-        });
-        if (window.location.hash.substring(1).length > 0) {
-            c.set(decodeURIComponent(window.location.hash.substring(1)));
-        }
-    </script>
+    	<script>
+		var c = new CVSS("cvssboard", {
+		    onchange: function() {
+			window.location.hash = c.get().vector;
+			c.vector.setAttribute('href', '#' + c.get().vector)
+		    }
+		});
+		if (window.location.hash.substring(1).length > 0) {
+		    c.set(decodeURIComponent(window.location.hash.substring(1)));
+		}
+	</script>
 </html>
